@@ -98,18 +98,18 @@ export default function CaterersPage() {
     max-width: 1100px; 
     margin: 0 auto;
     display: flex; 
-    gap: 12px; 
+    gap: 16px; 
     align-items: center; 
     flex-wrap: wrap;
   }
   .search-wrap { 
     position: relative; 
     flex: 1; 
-    min-width: 200px; 
+    min-width: 220px; 
   }
   .search-icon {
     position: absolute; 
-    left: 12px; 
+    left: 14px; 
     top: 50%;
     transform: translateY(-50%); 
     color: #A09A8E; 
@@ -117,11 +117,11 @@ export default function CaterersPage() {
   }
   .search-input {
     width: 100%; 
-    height: 42px; 
-    padding: 0 12px 0 38px;
+    height: 46px; 
+    padding: 0 14px 0 42px;
     border: 1.5px solid #EAE8E2; 
     border-radius: 10px;
-    font-size: 14px; 
+    font-size: 15px; 
     font-family: inherit; 
     color: #1C1A17;
     background: #FAFAF8; 
@@ -144,13 +144,13 @@ export default function CaterersPage() {
   }
   .price-pills { 
     display: flex; 
-    gap: 6px; 
+    gap: 8px; 
     flex-wrap: wrap; 
   }
   .price-pill {
-    padding: 6px 14px; 
-    border-radius: 20px; 
-    font-size: 13px;
+    padding: 8px 16px; 
+    border-radius: 9999px; 
+    font-size: 13.5px;
     font-family: inherit; 
     font-weight: 500; 
     cursor: pointer;
@@ -159,6 +159,9 @@ export default function CaterersPage() {
     color: #6B6560; 
     transition: all 0.15s; 
     white-space: nowrap;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
   }
   .price-pill:hover { 
     border-color: #C8A96E; 
@@ -175,7 +178,7 @@ export default function CaterersPage() {
     max-width: 1100px; 
     margin: 0 auto;
     padding: 20px 24px 8px; 
-    font-size: 13px; 
+    font-size: 13.5px; 
     color: #A09A8E;
   }
   .results-meta strong { 
@@ -190,7 +193,7 @@ export default function CaterersPage() {
     padding: 12px 24px 60px;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 18px;
+    gap: 20px;
   }
 
   /* Card */
@@ -208,147 +211,63 @@ export default function CaterersPage() {
     box-shadow: 0 12px 32px rgba(28,26,23,0.09);
     border-color: #D4C9A8;
   }
-  .card-header { 
-    display: flex; 
-    gap: 14px; 
-    align-items: flex-start; 
-    margin-bottom: 14px; 
-  }
-  .avatar {
-    width: 48px; 
-    height: 48px; 
-    border-radius: 12px;
-    background: linear-gradient(135deg, #C8A96E 0%, #E8C98E 100%);
-    color: #fff; 
-    font-size: 15px; 
-    font-weight: 700;
-    display: flex; 
-    align-items: center; 
-    justify-content: center;
-    flex-shrink: 0; 
-    letter-spacing: 0.02em;
-  }
-  .card-title-group { 
-    flex: 1; 
-    min-width: 0; 
-  }
-  .caterer-name {
-    font-size: 15px; 
-    font-weight: 600; 
-    color: #1C1A17;
-    line-height: 1.3; 
-    white-space: nowrap;
-    overflow: hidden; 
-    text-overflow: ellipsis;
-  }
-  .caterer-location { 
-    font-size: 12.5px; 
-    color: #A09A8E; 
-    margin-top: 3px; 
+
+  /* ==================== RESPONSIVE ==================== */
+
+  /* Tablet */
+  @media (max-width: 1024px) {
+    .caterers-grid {
+      gap: 18px;
+      padding: 12px 20px 50px;
+    }
   }
 
-  .cuisine-tags { 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 6px; 
-    margin-bottom: 16px; 
-  }
-  .cuisine-tag {
-    background: #F5F2EA; 
-    color: #6B6560; 
-    font-size: 11.5px;
-    font-weight: 500; 
-    padding: 4px 10px; 
-    border-radius: 6px;
-    border: 1px solid #EAE8E2;
-  }
-
-  .card-footer {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between;
-    padding-top: 14px; 
-    border-top: 1px solid #F0EDE5; 
-    margin-top: auto;
-  }
-  .rating-group { 
-    display: flex; 
-    align-items: center; 
-    gap: 5px; 
-  }
-  .rating-number { 
-    font-size: 13px; 
-    font-weight: 600; 
-    color: #1C1A17; 
-  }
-  .price-group { 
-    display: flex; 
-    flex-direction: column; 
-    align-items: flex-end; 
-  }
-  .price-label { 
-    font-size: 11px; 
-    color: #A09A8E; 
-    line-height: 1; 
-    margin-bottom: 2px; 
-  }
-  .price-value {
-    font-size: 18px; 
-    font-weight: 700; 
-    color: #C8A96E;
-    font-feature-settings: "tnum"; 
-    letter-spacing: -0.01em;
+  /* Mobile Large (≤768px) */
+  @media (max-width: 768px) {
+    .page-header {
+      padding: 32px 20px 28px;
+    }
+    .header-title {
+      font-size: clamp(26px, 6vw, 38px);
+    }
+    .controls-bar {
+      padding: 14px 20px;
+    }
+    .controls-inner {
+      gap: 12px;
+    }
+    .search-input {
+      height: 44px;
+      font-size: 15px;
+    }
   }
 
-  /* Skeleton */
-  .skeleton {
-    background: linear-gradient(90deg, #EAE8E2 25%, #F5F2EA 50%, #EAE8E2 75%);
-    background-size: 200% 100%;
-    animation: shimmer 1.4s infinite;
-    border-radius: 6px;
-  }
-  @keyframes shimmer {
-    0%   { background-position: 200% 0; }
-    100% { background-position: -200% 0; }
-  }
-
-  /* Empty / Error */
-  .empty-state, .error-state {
-    grid-column: 1 / -1; 
-    text-align: center; 
-    padding: 64px 24px;
-  }
-  .empty-icon, .error-icon { 
-    font-size: 48px; 
-    margin-bottom: 16px; 
-    opacity: 0.4; 
-  }
-  .empty-state h3, .error-state h3 {
-    font-size: 18px; 
-    color: #6B6560; 
-    margin-bottom: 8px;
-  }
-  .error-state h3 { 
-    color: #E24B4A; 
-  }
-  .empty-state p, .error-state p { 
-    font-size: 14px; 
-    color: #A09A8E; 
-  }
-
-  /* Responsive */
+  /* Mobile Small (≤640px) */
   @media (max-width: 640px) {
     .controls-inner { 
       flex-direction: column; 
       align-items: stretch; 
     }
+    
+    .search-wrap {
+      min-width: auto;
+    }
+
+    .price-pills { 
+      gap: 6px;
+    }
     .price-pill { 
-      font-size: 12px; 
-      padding: 5px 10px; 
+      font-size: 13px; 
+      padding: 7px 14px; 
+      min-height: 36px;
     }
+
     .caterers-grid { 
-      padding: 12px 16px 48px; 
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      padding: 12px 16px 40px;
+      gap: 16px;
     }
+
     .page-header { 
       padding: 28px 16px 24px; 
     }
@@ -356,7 +275,29 @@ export default function CaterersPage() {
       padding: 12px 16px; 
     }
     .results-meta { 
-      padding: 16px 16px 6px; 
+      padding: 16px 16px 8px; 
+      font-size: 13px;
+    }
+
+    .caterer-card {
+      padding: 18px;
+    }
+  }
+
+  /* Very Small Phones (≤480px) */
+  @media (max-width: 480px) {
+    .caterers-grid {
+      grid-template-columns: 1fr;
+      padding: 12px 14px 32px;
+    }
+
+    .header-subtitle {
+      font-size: 14px;
+    }
+
+    .price-pill {
+      padding: 6px 12px;
+      font-size: 12.5px;
     }
   }
 `}</style>
